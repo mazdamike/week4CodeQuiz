@@ -1,3 +1,5 @@
+var body = document.body;
+
 var timerEl = document.querySelector("#timer");
 var startQuizBtnEl = document.querySelector("#startQuiz");
 var questionBoxEl = document.querySelector("#questionBox");
@@ -7,8 +9,6 @@ var btnl = document.createElement("button");
 var btn2 = document.createElement("button");
 var btn3 = document.createElement("button");
 var btn4 = document.createElement("button");
-
-
 
 var questions = [
     "What data type stores a collection of values?",
@@ -54,7 +54,7 @@ var answers5 = [
 ]
 
 
-var secondsLeft = 75;
+var secondsLeft = 5;
 
 timerEl.textContent = "Time: " + secondsLeft;
 
@@ -68,22 +68,44 @@ function startQuiz() {
       
       if(secondsLeft === 0) {
         clearInterval(timerInterval);
-        sendMessage();
+        youLoseMessage();
       }
     }, 1000);
   
-     
+    startQuizBtnEl.style.display = "none"; 
     questionBoxEl.textContent = (questions[0]);
+    answerBoxEl.textContent = "";
+    var btn1 = document.createElement("button");
+    var btn2 = document.createElement("button");
+    var btn3 = document.createElement("button");
+    var btn4 = document.createElement("button");
     btn1.textContent = answers1[0];
     btn2.textContent = answers1[1];
     btn3.textContent = answers1[2];
     btn4.textContent = answers1[3];
+    btn1.setAttribute("class", "btn");
+    btn2.setAttribute("class", "btn");
+    btn3.setAttribute("class", "btn");
+    btn4.setAttribute("class", "btn");
+
     answerBoxEl.appendChild(btn1);
     answerBoxEl.appendChild(btn2);
     answerBoxEl.appendChild(btn3);
     answerBoxEl.appendChild(btn4);
+    
+    btn3.addEventListener("click", function() {
+      var correctMessage = 
+
+
+    });
+
 
 
 
 }
 
+function youLoseMessage() {
+  alert("Time is expired, you lose.");
+  secondsLeft = 5;
+  timerEl.textContent = "Time: " + secondsLeft;
+}
