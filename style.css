@@ -22,13 +22,13 @@ h1 {
     margin-bottom: 20px;
 }
 
-p {
+/* p {
     font-weight: bold;
     margin-bottom: 100px;
-}
+} */
 
 .btn {
-    width: 160px;
+    width: 260px;
     height: 50px;
     border-radius: 10px;
     font-size: 130%;
@@ -39,4 +39,17 @@ p {
 .btn:hover {
     background-color: magenta;
     cursor: pointer;
+}
+
+#answerBox {
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+#declareBox {
+    text-align: center;
+}
+
+form {
+    text-align: center;
 }
